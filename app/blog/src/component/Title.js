@@ -1,4 +1,6 @@
-function Title() {
+import React from 'react'
+
+const Title = () => {
     return (
         <div >
             <h1 class="flex justify-center items-center m-5 text-3xl font-bold text-gray-400">3학년 여름방학 리엑트 과제</h1>

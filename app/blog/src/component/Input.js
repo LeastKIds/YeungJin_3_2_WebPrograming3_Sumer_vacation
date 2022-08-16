@@ -1,4 +1,6 @@
-function Input() {
+import React from 'react'
+
+const Input = () => {
     return (
         <div className='flex items-center justify-center mt-10'>
             <div className="rounded-xl border p-5 shadow-md w-9/12 bg-white">
