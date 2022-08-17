@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { uploadCheck } from '../Controller/PostController'
 
@@ -24,7 +24,7 @@ const Input = () => {
 
                         <input
                             className="appearance-none block w-full bg-gray-200 text-gray-700 border border-blue-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                            id="grid-first-name" type="text" placeholder="닉네임"
+                            id="grid-first-name" type="text" placeholder="닉네임" value={nickname}
                             onChange= { (event) => { setNickname(event.target.value) } } />
 
 
@@ -42,7 +42,7 @@ const Input = () => {
 
                             <input
                                 className="appearance-none block w-full bg-gray-200 text-gray-700 border border-blue-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                id="grid-first-name" type="text" placeholder="아이디"
+                                id="grid-first-name" type="text" placeholder="아이디" value={id}
                                 onChange={ (event) => { setId(event.target.value) }}
                             />
                         </div>
@@ -56,7 +56,7 @@ const Input = () => {
 
                             <input
                                 className="appearance-none block w-full bg-gray-200 text-gray-700 border border-blue-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                id="grid-first-name" type="password" placeholder="비밀번호"
+                                id="grid-first-name" type="password" placeholder="비밀번호" value={password}
                                 onChange={ (event) => { setPassword(event.target.value) } }
                             />
                         </div>
@@ -68,7 +68,7 @@ const Input = () => {
                     <div className="relative z-0 mb-6 group">
                         <input type="text" name="floating_title" id="floating_title"
                                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-900 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                               placeholder=" " required
+                               placeholder=" " required value={title}
                                 onChange={ (event) => { setTitle(event.target.value) }}
                         />
                         <label htmlFor="floating_title"
@@ -80,12 +80,21 @@ const Input = () => {
 
                     <textarea id="message" rows="4"
                               className="block p-2.5 w-full text-sm text-gray-500 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                              placeholder="내용을 입력해 주세요"
+                              placeholder="내용을 입력해 주세요" value={content}
                                 onChange={ (event) => { setContent(event.target.value)}}
                     ></textarea>
                 </div>
                 <button type="button"
-                        onClick={() => { uploadCheck(nickname, id, password, title, content) }}
+                        onClick={async() => {
+
+                            if( await uploadCheck(nickname, id, password, title, content) ) {
+                                await setNickname("")
+                                setId("")
+                                setTitle("")
+                                setContent("")
+                                setPassword("")
+                            }
+                        }}
                         className="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
                     등록
                 </button>

@@ -4,8 +4,11 @@
 1. git clone https://github.com/LeastKIds/YeungJin_3_2_WebPrograming3_Sumer_vacation.git
 2. cd ./app/blog
 3. npm install
-4. (만약 json server가 실행되지 않는 다면) npm i -g json-server
-5. http://localhost:3000 접속
+4. npm run start
+5. 새로운 터미널
+6. (만약 json server가 실행되지 않는 다면) npm i -g json-server
+7. json-server --watch db.json --port 3001
+8. http://localhost:3000 접속
 
 ### 도커로 실행(저는 이 방법으로 실행했습니다.)
 1. git clone https://github.com/LeastKIds/YeungJin_3_2_WebPrograming3_Sumer_vacation.git

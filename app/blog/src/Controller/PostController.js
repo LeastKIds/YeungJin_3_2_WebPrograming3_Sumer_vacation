@@ -5,11 +5,6 @@ const read = (index) => {
 }
 
 const uploadCheck = async(nickname, id, password, title, content) => {
-    console.log(nickname)
-    console.log(id)
-    console.log(password)
-    console.log(title)
-    console.log(content)
 
     if(nickname === "") {
         alert("닉네임이 없어요")
@@ -33,7 +28,8 @@ const uploadCheck = async(nickname, id, password, title, content) => {
         user_id: id,
         password: password,
         title: title,
-        content: content
+        content: content,
+        date: new Date()
     }
 
     const res = await fetch('http://localhost:3001/posts', {
@@ -44,16 +40,10 @@ const uploadCheck = async(nickname, id, password, title, content) => {
 
     console.log(res)
 
-    // const response = await fetch('http://localhost:3001/posts',
-    //     {
-    //         method: 'GET',
-    //     });
-    //
-    // const data = await response.json();
-    // console.log("get")
-    // console.log(data)
-
-
+    if(res.status !== 201) {
+        alert("에러")
+        return false
+    }
 
     alert("작성 완료")
     return true
