@@ -1,5 +1,28 @@
 {
-  "posts" : [
-
+  "posts": [
+    {
+      "id": 1,
+      "content": "123",
+      "user_id": "132",
+      "password": "21231",
+      "nickname": "12313213123213",
+      "title": "ssss"
+    },
+    {
+      "nickname": "1",
+      "user_id": "2",
+      "password": "3",
+      "title": "4",
+      "content": "4",
+      "id": 2
+    },
+    {
+      "nickname": "12",
+      "user_id": "31",
+      "password": "23",
+      "title": "31",
+      "content": "test",
+      "id": 3
+    }
   ]
 }

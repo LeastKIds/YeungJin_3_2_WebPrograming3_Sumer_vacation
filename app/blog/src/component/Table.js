@@ -2,7 +2,7 @@ import React from 'react'
 
 const Table = () => {
     return (
-        <div class="flex justify-center items-center">
+        <div className="flex justify-center items-center">
             <table className="table-fixed border-separate border-spacing-2 border border-slate-500 bg-slate-100 rounded m-5">
                 <thead>
                 <tr>

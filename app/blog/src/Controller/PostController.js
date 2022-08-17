@@ -30,13 +30,13 @@ const uploadCheck = async(nickname, id, password, title, content) => {
 
     const post = {
         nickname: nickname,
-        id: id,
+        user_id: id,
         password: password,
         title: title,
         content: content
     }
 
-    const res = await fetch('http://localhost/post', {
+    const res = await fetch('http://localhost:3001/posts', {
         method: 'POST',
         headers: {'Content-type': 'application/json'},
         body : JSON.stringify(post)
@@ -44,7 +44,7 @@ const uploadCheck = async(nickname, id, password, title, content) => {
 
     console.log(res)
 
-    // const response = await fetch('http://localhost/posts',
+    // const response = await fetch('http://localhost:3001/posts',
     //     {
     //         method: 'GET',
     //     });

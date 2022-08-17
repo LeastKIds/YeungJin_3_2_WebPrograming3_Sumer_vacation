@@ -7,7 +7,7 @@ import Input from './component/Input'
 
 function App() {
   return (
-    <div className="App" class="h-screen dark:bg-gray-800 overflow-auto">
+    <div className="App h-screen dark:bg-gray-800 overflow-auto">
         <Title/>
         <Table/>
         <Input/>

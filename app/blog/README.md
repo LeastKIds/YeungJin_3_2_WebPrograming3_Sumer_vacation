@@ -10,16 +10,17 @@
 ### 도커로 실행(저는 이 방법으로 실행했습니다.)
 1. git clone https://github.com/LeastKIds/YeungJin_3_2_WebPrograming3_Sumer_vacation.git
 2. docker pull node
-3. docker run -it --name 컨테이너이름 -p 3000:3000 -v 절대경로/app:/app node
+3. docker run -it --name 컨테이너이름 -p 3000:3000 -p 3001:3001 -v 절대경로/app:/app node
 4. docker start 컨테이너이름
 5. docker exec -it 컨테이너이름 /bin/bash
 6. cd ./app/blog
 7. npm install
 8. npm run start
-9. docker pull clue/json-server
-10. docker run -d --name 컨테이너이름 -p 3001:80 -v 절대경로/app/blog/db.json:/data/db.json clue/json-server
-11. docker start 컨테이너이름
-12. http://localhost:3000 접속
+9. 새로운 터미널
+10. docker exec -it 컨테이너이름 /bin/bash
+11. cd ./app/blog
+12. node server.js
+13. http://localhost:3000 접속
 
 
 
