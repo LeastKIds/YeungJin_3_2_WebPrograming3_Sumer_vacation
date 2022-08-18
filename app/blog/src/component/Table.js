@@ -9,12 +9,21 @@ const Table = () => {
     const [posts, setPosts] = useState([])
 
 
-    const postsIndex = async() => {
-        return await index()
-    }
 
     useEffect(  () => {
-        postsIndex().then(r => setPosts(r))
+        // postsIndex()
+
+        async function get() {
+            const response = await index()
+            setPosts(response)
+        }
+
+        get();
+
+        return () => {
+            console.log('posts index : ' + posts)
+        }
+
     }, [])
 
     return (
@@ -33,7 +42,7 @@ const Table = () => {
                 {/*    <td>Malcolm Lockyer</td>*/}
                 {/*    <td>1961</td>*/}
                 {/*</tr>*/}
-                <Posts posts={posts} />
+                {/*<Posts posts={posts} />*/}
 
                 </tbody>
             </table>
