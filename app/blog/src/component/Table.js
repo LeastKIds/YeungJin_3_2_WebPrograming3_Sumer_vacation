@@ -1,10 +1,21 @@
 import React, {useState, useEffect} from 'react'
+import Posts from './Posts'
+
+import { index } from '../Controller/PostController'
+
 
 const Table = () => {
 
-    useEffect( () => {
-        console.log("test")
-    },[])
+    const [posts, setPosts] = useState([])
+
+
+    const postsIndex = async() => {
+        return await index()
+    }
+
+    useEffect(  () => {
+        postsIndex().then(r => setPosts(r))
+    }, [])
 
     return (
         <div className="flex justify-center items-center">
@@ -17,157 +28,12 @@ const Table = () => {
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-                    <td>Malcolm Lockyer</td>
-                    <td>1961</td>
-                </tr>
                 {/*<tr>*/}
-                {/*    <td>Witchy Woman</td>*/}
-                {/*    <td>The Eagles</td>*/}
-                {/*    <td>1972</td>*/}
+                {/*    <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>*/}
+                {/*    <td>Malcolm Lockyer</td>*/}
+                {/*    <td>1961</td>*/}
                 {/*</tr>*/}
-                {/*<tr>*/}
-                {/*    <td>Witchy Woman</td>*/}
-                {/*    <td>The Eagles</td>*/}
-                {/*    <td>1972</td>*/}
-                {/*</tr>*/}
-                {/*<tr>*/}
-                {/*    <td>Witchy Woman</td>*/}
-                {/*    <td>The Eagles</td>*/}
-                {/*    <td>1972</td>*/}
-                {/*</tr><tr>*/}
-                {/*    <td>Witchy Woman</td>*/}
-                {/*    <td>The Eagles</td>*/}
-                {/*    <td>1972</td>*/}
-                {/*</tr><tr>*/}
-                {/*    <td>Witchy Woman</td>*/}
-                {/*    <td>The Eagles</td>*/}
-                {/*    <td>1972</td>*/}
-                {/*</tr><tr>*/}
-                {/*    <td>Witchy Woman</td>*/}
-                {/*    <td>The Eagles</td>*/}
-                {/*    <td>1972</td>*/}
-                {/*</tr>*/}
-                {/*<tr>*/}
-                {/*    <td>Witchy Woman</td>*/}
-                {/*    <td>The Eagles</td>*/}
-                {/*    <td>1972</td>*/}
-                {/*</tr><tr>*/}
-                {/*    <td>Witchy Woman</td>*/}
-                {/*    <td>The Eagles</td>*/}
-                {/*    <td>1972</td>*/}
-                {/*</tr>*/}
-                {/*<tr>*/}
-                {/*    <td>Witchy Woman</td>*/}
-                {/*    <td>The Eagles</td>*/}
-                {/*    <td>1972</td>*/}
-                {/*</tr><tr>*/}
-                {/*    <td>Witchy Woman</td>*/}
-                {/*    <td>The Eagles</td>*/}
-                {/*    <td>1972</td>*/}
-                {/*</tr>*/}
-                {/*<tr>*/}
-                {/*    <td>Witchy Woman</td>*/}
-                {/*    <td>The Eagles</td>*/}
-                {/*    <td>1972</td>*/}
-                {/*</tr><tr>*/}
-                {/*    <td>Witchy Woman</td>*/}
-                {/*    <td>The Eagles</td>*/}
-                {/*    <td>1972</td>*/}
-                {/*</tr><tr>*/}
-                {/*    <td>Witchy Woman</td>*/}
-                {/*    <td>The Eagles</td>*/}
-                {/*    <td>1972</td>*/}
-                {/*</tr>*/}
-                {/*<tr>*/}
-                {/*    <td>Witchy Woman</td>*/}
-                {/*    <td>The Eagles</td>*/}
-                {/*    <td>1972</td>*/}
-                {/*</tr><tr>*/}
-                {/*    <td>Witchy Woman</td>*/}
-                {/*    <td>The Eagles</td>*/}
-                {/*    <td>1972</td>*/}
-                {/*</tr>*/}
-                {/*<tr>*/}
-                {/*    <td>Witchy Woman</td>*/}
-                {/*    <td>The Eagles</td>*/}
-                {/*    <td>1972</td>*/}
-                {/*</tr><tr>*/}
-                {/*    <td>Witchy Woman</td>*/}
-                {/*    <td>The Eagles</td>*/}
-                {/*    <td>1972</td>*/}
-                {/*</tr><tr>*/}
-                {/*    <td>Witchy Woman</td>*/}
-                {/*    <td>The Eagles</td>*/}
-                {/*    <td>1972</td>*/}
-                {/*</tr>*/}
-                {/*<tr>*/}
-                {/*    <td>Witchy Woman</td>*/}
-                {/*    <td>The Eagles</td>*/}
-                {/*    <td>1972</td>*/}
-                {/*</tr><tr>*/}
-                {/*    <td>Witchy Woman</td>*/}
-                {/*    <td>The Eagles</td>*/}
-                {/*    <td>1972</td>*/}
-                {/*</tr><tr>*/}
-                {/*    <td>Witchy Woman</td>*/}
-                {/*    <td>The Eagles</td>*/}
-                {/*    <td>1972</td>*/}
-                {/*</tr>*/}
-                {/*<tr>*/}
-                {/*    <td>Witchy Woman</td>*/}
-                {/*    <td>The Eagles</td>*/}
-                {/*    <td>1972</td>*/}
-                {/*</tr><tr>*/}
-                {/*    <td>Witchy Woman</td>*/}
-                {/*    <td>The Eagles</td>*/}
-                {/*    <td>1972</td>*/}
-                {/*</tr><tr>*/}
-                {/*    <td>Witchy Woman</td>*/}
-                {/*    <td>The Eagles</td>*/}
-                {/*    <td>1972</td>*/}
-                {/*</tr><tr>*/}
-                {/*    <td>Witchy Woman</td>*/}
-                {/*    <td>The Eagles</td>*/}
-                {/*    <td>1972</td>*/}
-                {/*</tr><tr>*/}
-                {/*    <td>Witchy Woman</td>*/}
-                {/*    <td>The Eagles</td>*/}
-                {/*    <td>1972</td>*/}
-                {/*</tr>*/}
-                {/*<tr>*/}
-                {/*    <td>Witchy Woman</td>*/}
-                {/*    <td>The Eagles</td>*/}
-                {/*    <td>1972</td>*/}
-                {/*</tr><tr>*/}
-                {/*    <td>Witchy Woman</td>*/}
-                {/*    <td>The Eagles</td>*/}
-                {/*    <td>1972</td>*/}
-                {/*</tr>*/}
-                {/*<tr>*/}
-                {/*    <td>Witchy Woman</td>*/}
-                {/*    <td>The Eagles</td>*/}
-                {/*    <td>1972</td>*/}
-                {/*</tr>*/}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                <Posts posts={posts} />
 
                 </tbody>
             </table>

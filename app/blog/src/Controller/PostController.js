@@ -1,5 +1,14 @@
 import React from 'react'
 
+const index = async() => {
+    const response = await fetch('http://localhost:3001/posts?_sort=date&_order=DESC',
+        {
+            method: 'GET',
+        });
+    const data = await response.json();
+    return data
+}
+
 const read = (index) => {
 
 }
@@ -29,7 +38,8 @@ const uploadCheck = async(nickname, id, password, title, content) => {
         password: password,
         title: title,
         content: content,
-        date: new Date()
+        date: new Date(),
+        like: 0
     }
 
     const res = await fetch('http://localhost:3001/posts', {
@@ -49,4 +59,4 @@ const uploadCheck = async(nickname, id, password, title, content) => {
     return true
 }
 
-export { read, uploadCheck }
+export { index, read, uploadCheck }
