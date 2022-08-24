@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import Posts from './Posts'
+import Post from './Post'
 
 import { index } from '../Controller/PostController'
 
@@ -9,20 +9,13 @@ const Table = () => {
     const [posts, setPosts] = useState([])
 
 
+    const postsIndex = async() => {
+        const res = await index()
+        setPosts(res)
+    }
 
     useEffect(  () => {
-        // postsIndex()
-
-        async function get() {
-            const response = await index()
-            setPosts(response)
-        }
-
-        get();
-
-        return () => {
-            console.log('posts index : ' + posts)
-        }
+        postsIndex()
 
     }, [])
 
@@ -37,16 +30,20 @@ const Table = () => {
                 </tr>
                 </thead>
                 <tbody>
-                {/*<tr>*/}
-                {/*    <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>*/}
-                {/*    <td>Malcolm Lockyer</td>*/}
-                {/*    <td>1961</td>*/}
-                {/*</tr>*/}
-                {/*<Posts posts={posts} />*/}
+
+                {posts.map( (post) => (
+                    <Post post={post} key={post.id}/>
+                ))}
+
 
                 </tbody>
             </table>
+
+
+
         </div>
+
+
 
     )
 }
