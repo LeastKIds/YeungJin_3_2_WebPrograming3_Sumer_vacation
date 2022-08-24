@@ -6,7 +6,7 @@ import Footer from './component/Footer'
 import Input from './component/Input'
 import {useEffect, useState, useCallback} from "react";
 import {index} from "./Controller/PostController";
-import post from "./component/Post";
+import { BrowserRouter } from 'react-router-dom'
 
 
 function App() {
@@ -32,10 +32,12 @@ function App() {
 
   return (
     <div className="App h-screen dark:bg-gray-800 overflow-auto">
-        <Title/>
-        <Table posts={posts}/>
-        <Input reloadPosts={reloadPosts}/>
-        <Footer/>
+        <BrowserRouter>
+            <Title/>
+            <Table posts={posts}/>
+            <Input reloadPosts={reloadPosts}/>
+            <Footer/>
+        </BrowserRouter>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import Post from './Post'
+import Posts from './Posts'
 
 const Table = (props) => {
 
@@ -18,7 +18,7 @@ const Table = (props) => {
                 <tbody>
 
                 {posts && posts.map( (post) => (
-                    <Post post={post} key={post.id}/>
+                    <Posts post={post} key={post.id}/>
                 )) }
 
 

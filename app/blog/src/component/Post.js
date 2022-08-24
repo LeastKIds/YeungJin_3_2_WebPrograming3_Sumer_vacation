@@ -1,15 +1,8 @@
-import React, {useState, useEffect} from 'react'
-
-const Post = (props) => {
-
-    const post = props.post
-
+const Post = () => {
     return (
-        <tr>
-            <td >{post.title}</td>
-            <td >{post.nickname}</td>
-            <td >{post.like}</td>
-        </tr>
+        <div>
+            p0st
+        </div>
     )
 }
 
