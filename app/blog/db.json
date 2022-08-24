@@ -19,6 +19,26 @@
       "date": "2022-08-24T07:07:32.285Z",
       "like": 0,
       "id": 2
+    },
+    {
+      "nickname": "32",
+      "user_id": "12",
+      "password": "32",
+      "title": "12",
+      "content": "32",
+      "date": "2022-08-24T07:36:44.398Z",
+      "like": 0,
+      "id": 3
+    },
+    {
+      "nickname": "tt",
+      "user_id": "tt",
+      "password": "tt",
+      "title": "ttt",
+      "content": "t",
+      "date": "2022-08-24T07:36:52.301Z",
+      "like": 0,
+      "id": 4
     }
   ]
 }

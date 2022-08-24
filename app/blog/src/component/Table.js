@@ -1,23 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import Post from './Post'
 
-import { index } from '../Controller/PostController'
+const Table = (props) => {
 
-
-const Table = () => {
-
-    const [posts, setPosts] = useState([])
-
-
-    const postsIndex = async() => {
-        const res = await index()
-        setPosts(res)
-    }
-
-    useEffect(  () => {
-        postsIndex()
-
-    }, [])
+    const posts = props.posts
 
     return (
         <div className="flex justify-center items-center">
@@ -31,14 +17,13 @@ const Table = () => {
                 </thead>
                 <tbody>
 
-                {posts.map( (post) => (
+                {posts && posts.map( (post) => (
                     <Post post={post} key={post.id}/>
-                ))}
+                )) }
 
 
                 </tbody>
             </table>
-
 
 
         </div>
